@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actividad 1 - DW | Inicio</title>
+
+  <!-- Bootstrap 5 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Solo ajustes mínimos (siguen siendo Bootstrap, solo afinado visual) -->
+  <style>
+    .top-head { font-size: 0.95rem; }
+    .menu-box a{
+      display:block; padding:10px 0; text-align:center;
+      border:1px solid #cfcfcf; background:#fff; color:#111;
+      text-decoration:none;
+    }
+    .menu-box a:hover{ background:#f2f2f2; }
+    .menu-box .active{ background:#e9ecef; font-weight:700; }
+
+    .band-red { background:#b30000; color:#fff; font-weight:700; }
+    .band-blue { background:#1f4e79; color:#fff; font-weight:700; }
+
+    .shadow-soft { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+  </style>
+</head>
+
+<body class="bg-white">
+
+  <div class="container py-3">
+
+    <!-- Encabezado superior (alineado a la derecha como el ejemplo) -->
+    <div class="text-end top-head">
+      <div class="fw-semibold">Universidad de San Carlos de Guatemala – USAC</div>
+      <div class="fw-semibold">Escuela de Formación de Profesores de Enseñanza Media – EFPEM</div>
+      <div class="fw-semibold">Diseño Web</div>
+    </div>
+
+    <hr class="my-3">
+
+    <!-- Menú (cajitas) -->
+    <div class="row g-0 menu-box mb-4">
+      <div class="col-6 col-md-3">
+        <a class="active" href="index.html">Inicio</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="listas_tablas.html">Listas y Tablas</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="imagenes_videos.html">Imágenes y Videos</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="formulario.html">Formulario</a>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD + DATOS GENERALES -->
+    <div class="text-center fw-bold mb-2">ACTIVIDAD 1 - DW</div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="border shadow-soft">
+          <div class="band-red text-center py-2">DATOS GENERALES</div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0 align-middle">
+              <tbody>
+                <tr>
+                  <td style="width:25%" class="fw-semibold">Carné:</td>
+                  <td>8912748</td>
+                </tr>
+                <tr>
+                  <td class="fw-semibold">Nombre(s):</td>
+                  <td>José Francisco</td>
+                </tr>
+                <tr>
+                  <td class="fw-semibold">Apellido(s):</td>
+                  <td>Portales Solval</td>
+                </tr>
+                <tr>
+                  <td class="fw-semibold">Fecha:</td>
+                  <td>22/01/2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Frase + Logo -->
+    <div class="row align-items-start mt-5 g-4">
+      <!-- Frase -->
+      <div class="col-12 col-md-6">
+        <div class="border shadow-soft" style="max-width: 340px;">
+          <div class="band-blue text-center py-2">Frase que le identifique</div>
+          <div class="p-5 text-center">
+            <div class="fst-italic fw-semibold">“Si quieres encontrar los secretos del universo, piensa en términos de energía, frecuencia y vibración.   Niloca Tesla”</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="col-12 col-md-6 text-center">
+        <!-- Cambia la ruta/archivo según tu imagen -->
+        <img src="img/logo_usac.png" alt="Logo" class="img-fluid" style="max-width: 260px;">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
