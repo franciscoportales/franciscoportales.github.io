@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducción a CSS</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Introducción a CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a class="activo" href="index.html">Inicio</a></li>
+        <li><a href="estructura.html">Estructura de CSS</a></li>
+        <li><a href="colores.html">Colores</a></li>
+        <li><a href="bordes.html">Bordes</a></li>
+        <li><a href="sombreada.html">Sombreada</a></li>
+        <li><a href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>¿Qué es CSS y para qué sirve?</h2>
+        <p>
+          CSS (Cascading Style Sheets) es un lenguaje que sirve para dar estilo a las páginas web.
+          Con CSS puedo cambiar colores, tamaños, tipografías, posiciones, bordes, sombras y hacer
+          que el sitio se vea ordenado y atractivo.
+        </p>
+      </article>
+
+      <article>
+        <h2>Formas de aplicar CSS (con ejemplo)</h2>
+
+        <h3>a) En línea (inline)</h3>
+        <div class="ejemplo">
+          <p style="color: #1e88e5; font-weight: bold;">
+            Esto es CSS en línea (dentro del atributo style).
+          </p>
+        </div>
+        <pre><code>&lt;p style="color:#1e88e5; font-weight:bold;"&gt;Texto&lt;/p&gt;</code></pre>
+
+        <h3>b) Interna (en la misma página)</h3>
+        <div class="ejemplo">
+          <p>Ejemplo: se escribe dentro de &lt;style&gt; en el &lt;head&gt;.</p>
+        </div>
+        <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    h2 { color: green; }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+        <h3>c) Externa (archivo .css)</h3>
+        <div class="ejemplo">
+          <p>Esta página usa CSS externo con <strong>css/estilos.css</strong>.</p>
+        </div>
+        <pre><code>&lt;link rel="stylesheet" href="css/estilos.css"&gt;</code></pre>
+      </article>
+
+      <article>
+        <h2>¿Qué es un comentario y cómo se escribe en CSS?</h2>
+        <p>
+          Un comentario es un texto que el navegador ignora; sirve para explicar el código o dejar notas.
+        </p>
+        <pre><code>/* Esto es un comentario en CSS */</code></pre>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+        Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>

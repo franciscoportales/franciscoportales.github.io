@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sombras en CSS</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Sombras en CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estructura.html">Estructura de CSS</a></li>
+        <li><a href="colores.html">Colores</a></li>
+        <li><a href="bordes.html">Bordes</a></li>
+        <li><a class="activo" href="sombreada.html">Sombreada</a></li>
+        <li><a href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>Propiedad text-shadow</h2>
+        <p>
+          Sirve para dar sombra al texto. Se define como:
+          <code>text-shadow: x y blur color;</code>
+        </p>
+        <div class="ejemplo">
+          <p class="textoSombra">Este texto tiene sombra (text-shadow)</p>
+        </div>
+        <pre><code>.textoSombra{
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.35);
+}</code></pre>
+      </article>
+
+      <article>
+        <h2>Propiedad box-shadow</h2>
+        <p>
+          Sirve para dar sombra a cajas (div, article, etc.):
+          <code>box-shadow: x y blur color;</code>
+        </p>
+        <div class="cajaSombra">
+          Esta caja tiene sombra (box-shadow)
+        </div>
+        <pre><code>.cajaSombra{
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}</code></pre>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+       Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>

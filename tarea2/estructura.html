@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructura de CSS</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Estructura de CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a class="activo" href="estructura.html">Estructura de CSS</a></li>
+        <li><a href="colores.html">Colores</a></li>
+        <li><a href="bordes.html">Bordes</a></li>
+        <li><a href="sombreada.html">Sombreada</a></li>
+        <li><a href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>Estructura básica de una regla CSS</h2>
+        <p><strong>Selector</strong> + <strong>Propiedad</strong> + <strong>Valor</strong></p>
+        <pre><code>p {
+  color: blue;
+  font-size: 18px;
+}</code></pre>
+        <ul>
+          <li><strong>Selector:</strong> p</li>
+          <li><strong>Propiedad:</strong> color, font-size</li>
+          <li><strong>Valor:</strong> blue, 18px</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>¿Qué es el modelo de cajas (box model) en CSS?</h2>
+        <p>
+          El modelo de cajas explica cómo se calcula el espacio que ocupa un elemento:
+          <strong>contenido</strong> + <strong>padding</strong> + <strong>border</strong> + <strong>margin</strong>.
+        </p>
+        <div class="ejemplo">
+          <div style="margin:10px; padding:12px; border:3px solid #1e88e5;">
+            Caja ejemplo (tiene margin, padding y border)
+          </div>
+        </div>
+        <pre><code>.caja{
+  margin: 10px;
+  padding: 12px;
+  border: 3px solid #1e88e5;
+}</code></pre>
+      </article>
+
+      <article>
+        <h2>Elementos de línea y elementos de bloque</h2>
+        <p>
+          <strong>Bloque:</strong> ocupan todo el ancho disponible (ej: div, p, section).<br>
+          <strong>Línea:</strong> ocupan solo lo que mide su contenido (ej: span, a, strong).
+        </p>
+
+        <div class="ejemplo">
+          <div style="border:1px solid #333; padding:8px;">Soy un DIV (bloque)</div>
+          <span style="border:1px solid #e53935; padding:4px;">Soy un SPAN (línea)</span>
+          <span style="border:1px solid #e53935; padding:4px;">Otro SPAN</span>
+        </div>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+      Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>

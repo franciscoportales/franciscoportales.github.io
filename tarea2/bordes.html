@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bordes en CSS</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Bordes en CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estructura.html">Estructura de CSS</a></li>
+        <li><a href="colores.html">Colores</a></li>
+        <li><a class="activo" href="bordes.html">Bordes</a></li>
+        <li><a href="sombreada.html">Sombreada</a></li>
+        <li><a href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>¿Qué es un borde?</h2>
+        <p>
+          Un borde es la línea que rodea un elemento. En CSS puedo controlar:
+          <strong>tipo</strong> (solid, dashed, double), <strong>color</strong> y <strong>grosor</strong>.
+          También puedo hacer bordes redondeados con <code>border-radius</code>.
+        </p>
+      </article>
+
+      <article>
+        <h2>Ejemplos</h2>
+        <div class="borde1">Borde solid, 3px, color negro</div>
+        <br>
+        <div class="borde2">Borde dashed, 3px, color azul</div>
+        <br>
+        <div class="borde3">Borde double, 6px, color rojo</div>
+        <br>
+        <div class="bordeRedondo">Borde redondeado con border-radius: 30px</div>
+
+        <pre><code>.borde1{ border: 3px solid #222; }
+.borde2{ border: 3px dashed #1e88e5; }
+.borde3{ border: 6px double #e53935; }
+.bordeRedondo{ border-radius: 30px; }</code></pre>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+      Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>

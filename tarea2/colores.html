@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colores en CSS</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Colores en CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estructura.html">Estructura de CSS</a></li>
+        <li><a class="activo" href="colores.html">Colores</a></li>
+        <li><a href="bordes.html">Bordes</a></li>
+        <li><a href="sombreada.html">Sombreada</a></li>
+        <li><a href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>¿Cómo se especifican los colores?</h2>
+        <p>En CSS puedo escribir colores usando:</p>
+        <ul>
+          <li>Nombres: <code>red</code>, <code>blue</code>, <code>green</code></li>
+          <li>RGB: <code>rgb(30, 136, 229)</code></li>
+          <li>HEX: <code>#1e88e5</code></li>
+          <li>HSL: <code>hsl(210, 80%, 50%)</code></li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Ejemplos</h2>
+        <div class="caja-color" style="background: lightgray;">
+          Color por nombre: <strong>lightgray</strong>
+        </div>
+
+        <div class="caja-color" style="background: rgb(30, 136, 229); color:#fff;">
+          Color RGB: <strong>rgb(30, 136, 229)</strong>
+        </div>
+
+        <div class="caja-color" style="background: #43a047; color:#fff;">
+          Color HEX: <strong>#43a047</strong>
+        </div>
+
+        <div class="caja-color" style="background: hsl(12, 80%, 55%); color:#fff;">
+          Color HSL: <strong>hsl(12, 80%, 55%)</strong>
+        </div>
+
+        <div class="fondoGradiente">
+          Ejemplo de gradiente (CSS3): linear-gradient(...)
+        </div>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+        Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>

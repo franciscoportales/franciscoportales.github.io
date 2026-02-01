@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fondos y Opacidad</title>
+  <link rel="icon" type="image/png" href="img/efpem-favicon.ico">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+
+    <header>
+      <h1>Fondos y Opacidad  CSS</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estructura.html">Estructura de CSS</a></li>
+        <li><a href="colores.html">Colores</a></li>
+        <li><a href="bordes.html">Bordes</a></li>
+        <li><a href="sombreada.html">Sombreada</a></li>
+        <li><a class="activo" href="fondos.html">Fondos y Opacidad</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>Propiedades de fondo (background-*)</h2>
+        <ul>
+          <li><code>background-color</code>: color de fondo</li>
+          <li><code>background-image</code>: imagen de fondo</li>
+          <li><code>background-repeat</code>: repetir o no la imagen</li>
+          <li><code>background-attachment</code>: fija o scroll</li>
+          <li><code>background-position</code>: posición de la imagen</li>
+        </ul>
+
+        <div class="fondoImagen">
+          Este cuadro tiene una imagen de fondo con:
+          background-image, repeat, position y size.
+        </div>
+
+        <pre><code>.fondoImagen{
+  background-image: url("../img/usacmini.png");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-attachment: scroll;
+}</code></pre>
+      </article>
+
+      <article>
+        <h2>Propiedad opacity</h2>
+        <p>
+          La opacidad controla la transparencia del elemento:
+          <strong>0</strong> es transparente y <strong>1</strong> es sólido.
+        </p>
+
+        <div class="opacidadDemo">
+          Caja con opacity: 0.7
+        </div>
+
+        <pre><code>.opacidadDemo{
+  opacity: 0.7;
+}</code></pre>
+      </article>
+    </section>
+
+    <aside>
+      <h3>USAC y EFPEM</h3>
+      <div class="logos">
+        <img src="img/usac.png" alt="Escudo USAC">
+        <img src="img/efpem.png" alt="Logo EFPEM">
+      </div>
+    </aside>
+
+    <footer>
+      Creado por: <strong>8912748</strong> - <strong>José Francisco Portales Solval</strong>
+    </footer>
+
+  </div>
+</body>
+</html>
