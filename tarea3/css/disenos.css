@@ -1,0 +1,746 @@
+/* =========================
+   DISEÑO 1 (GRID)
+   ========================= */
+.d1{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:20px;
+}
+
+.d1-grid{
+  width:1440px;
+  max-width:100%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:350px 1fr 350px;
+  grid-template-rows:350px 900px 50px;
+  grid-template-areas:
+    "h h h"
+    "m c l"
+    "f f f";
+  border:2px solid #111;
+  background:#fff;
+}
+
+.d1-header{ grid-area:h; background:#2f6fa3; color:#fff; display:flex; align-items:center; justify-content:center; font-size:2rem; font-weight:700; }
+.d1-menu{ grid-area:m; background:#b7d7ee; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:700; }
+.d1-content{ grid-area:c; background:#fff; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:700; border-left:2px solid #111; border-right:2px solid #111; }
+.d1-login{ grid-area:l; background:#f4c9a8; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:700; }
+.d1-footer{ grid-area:f; background:#0b2a56; color:#fff; display:flex; align-items:center; justify-content:center; text-align:center; font-size:1.05rem; font-weight:700; }
+
+/* =========================
+   DISEÑO 2 (1000px)
+   ========================= */
+
+.d2{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:20px;
+}
+
+/* Contenedor principal */
+.d2-grid{
+  width:1000px;
+  max-width:100%;
+  margin:auto;
+  background:#fff;
+  border:2px solid #111;
+
+  display:grid;
+
+  /* 3 columnas: section | article | aside */
+  grid-template-columns: 250px 1fr 250px;
+
+  /* 4 filas: banner | nav | cuerpo | footer */
+  grid-template-rows: 350px 125px 500px 50px;
+
+  grid-template-areas:
+    "banner banner banner"
+    "nav    nav    nav"
+    "sec    art    asi"
+    "foot   foot   foot";
+}
+
+/* Banner */
+.d2-banner{
+  grid-area:banner;
+  background:#ffeb00;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:700;
+}
+
+/* NAV con 4 botones */
+.d2-nav{
+  grid-area:nav;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+}
+
+.d2-nav a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:700;
+  color:#111;
+  border-right:2px solid #111;
+}
+
+/* Para que el último no tenga borde doble */
+.d2-nav a:last-child{
+  border-right:none;
+}
+
+/* Colores alternados como el esquema */
+.d2-nav a:nth-child(1),
+.d2-nav a:nth-child(3){
+  background:#f08a2d;
+}
+
+.d2-nav a:nth-child(2),
+.d2-nav a:nth-child(4){
+  background:#a9a9a9;
+}
+
+/* Botón activo (opcional) */
+.d2-activo{
+  outline:4px solid rgba(0,0,0,0.25);
+  outline-offset:-4px;
+}
+
+/* Cuerpo */
+.d2-section{
+  grid-area:sec;
+  background:#cfe3bf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.d2-article{
+  grid-area:art;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  font-weight:700;
+  border-left:2px solid #111;
+  border-right:2px solid #111;
+}
+
+.d2-aside{
+  grid-area:asi;
+  background:#cfe3bf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+/* Footer */
+.d2-footer{
+  grid-area:foot;
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:1rem;
+  font-weight:700;
+}
+
+
+/* =========================
+   DISEÑO 3 (porcentajes)
+   ========================= */
+.d3{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+/* Contenedor */
+.d3-grid{
+  width:100%;
+  max-width:1100px;      /* podés subirlo si querés */
+  margin:20px auto;
+  border:2px solid #111;
+  background:#fff;
+
+  display:grid;
+
+  /* 4 columnas (la última es la columna derecha) */
+  grid-template-columns: 1fr 1fr 1fr 25%;
+
+  /* Alturas según el esquema */
+  grid-template-rows: 20vh 25vh 25vh 20vh 10vh;
+
+  grid-template-areas:
+    "top top top top"
+    "cont cont cont menu"
+    "cont cont cont login"
+    "b1   b2   b3   b4"
+    "foot foot foot foot";
+}
+
+/* Top negro 20% */
+.d3-top{
+  grid-area:top;
+  background:#000;
+}
+
+/* Contenido grande */
+.d3-content{
+  grid-area:cont;
+  background:#cfcfcf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:1.6rem;
+}
+
+/* Columna derecha */
+.d3-menu{
+  grid-area:menu;
+  background:#f3b400;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.d3-login{
+  grid-area:login;
+  background:#9ec3e6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:1.1rem;
+  text-align:center;
+}
+
+/* Fila 20% de 4 bloques */
+.d3-b1{ grid-area:b1; background:#a9cf8f; }
+.d3-b2{ grid-area:b2; background:#fff700; }
+.d3-b3{ grid-area:b3; background:#ff0000; }
+.d3-b4{ grid-area:b4; background:#f3b400; }
+
+/* Footer negro 10% */
+.d3-footer{
+  grid-area:foot;
+  background:#000;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .d3-grid{
+    max-width:95%;
+    grid-template-columns: 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+      "top"
+      "menu"
+      "login"
+      "cont"
+      "b1"
+      "b2"
+      "b3"
+      "b4"
+      "foot";
+  }
+
+  .d3-top, .d3-footer{ height:120px; }
+  .d3-content{ height:320px; }
+  .d3-menu, .d3-login{ height:140px; }
+  .d3-b1,.d3-b2,.d3-b3,.d3-b4{ height:120px; }
+}
+
+
+/* =========================
+   DISEÑO 4 (1200px)
+   ========================= */
+.d4{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+.d4-grid{
+  width:1200px;
+  max-width:100%;
+  margin:20px auto;
+  border:2px solid #111;
+  background:#fff;
+
+  display:grid;
+
+  /* 6 columnas iguales para la fila de 6 bloques */
+  grid-template-columns:repeat(6, 1fr);
+
+  /* filas según el esquema */
+  grid-template-rows:250px 100px 500px 250px 100px;
+
+  grid-template-areas:
+    "banner banner banner banner banner banner"
+    "p1     p1     p3     p3     p4     p4"
+    "left   left   left   right  right  right"
+    "b1     b2     b3     b4     b5     b6"
+    "foot   foot   foot   foot   foot   foot";
+}
+
+/* Fila 1 */
+.d4-banner{
+  grid-area:banner;
+  background:#ffeb00;
+}
+
+/* Fila 2: páginas */
+.d4-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.d4-p1{ grid-area:p1; background:#b7d7a8; }   /* verde suave */
+.d4-p3{ grid-area:p3; background:#d9d9d9; }   /* gris */
+.d4-p4{ grid-area:p4; background:#bcd7f0; }   /* celeste */
+
+/* Fila 3 */
+.d4-left{
+  grid-area:left;
+  background:#f7e3a4; /* crema */
+}
+
+.d4-right{
+  grid-area:right;
+  background:#ef7d2a; /* naranja */
+}
+
+/* Fila 4 (6 bloques alternados) */
+.d4-b1{ grid-area:b1; background:#d9d9d9; }
+.d4-b2{ grid-area:b2; background:#bcd7f0; }
+.d4-b3{ grid-area:b3; background:#d9d9d9; }
+.d4-b4{ grid-area:b4; background:#bcd7f0; }
+.d4-b5{ grid-area:b5; background:#d9d9d9; }
+.d4-b6{ grid-area:b6; background:#bcd7f0; }
+
+/* Fila 5 */
+.d4-footer{
+  grid-area:foot;
+  background:#000;
+}
+
+
+/* =========================
+   DISEÑO 5 (1440px)
+   ========================= */
+.d5{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+.d5-grid{
+  width:1440px;
+  max-width:100%;
+  margin:20px auto;
+  border:2px solid #111;
+  background:#fff;
+
+  display:grid;
+
+  /* 6 columnas para las 6 imágenes */
+  grid-template-columns:repeat(6, 1fr);
+
+  /* Filas según el esquema */
+  grid-template-rows: 400px 50px 250px 800px 240px 80px;
+
+  grid-template-areas:
+    "head head head head head head"
+    "nav  nav  nav  nav  nav  nav"
+    "mis  mis  vis  vis  val  val"
+    "cont cont cont cont cont cont"
+    "i1   i2   i3   i4   i5   i6"
+    "foot foot foot foot foot foot";
+}
+
+/* Encabezado */
+.d5-header{
+  grid-area:head;
+  background:#ef7d2a; /* naranja */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:2rem;
+}
+
+/* Barra menú */
+.d5-nav{
+  grid-area:nav;
+  background:#cfe3bf; /* verde claro */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+/* Misión / Visión / Valores */
+.d5-mision{
+  grid-area:mis;
+  background:#8fca4a; /* verde */
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:1.6rem;
+}
+
+.d5-vision{
+  grid-area:vis;
+  background:#f6d46b; /* amarillo */
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:1.6rem;
+}
+
+.d5-valores{
+  grid-area:val;
+  background:#bcd7f0; /* celeste */
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:1.6rem;
+}
+
+/* Contenido */
+.d5-content{
+  grid-area:cont;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:2rem;
+}
+
+/* Imágenes (alternadas azul/naranja como el esquema) */
+.d5-img1, .d5-img3, .d5-img5{
+  background:#0b2a56; /* azul oscuro */
+  color:#fff;
+}
+.d5-img2, .d5-img4, .d5-img6{
+  background:#ef7d2a; /* naranja */
+  color:#fff;
+}
+
+.d5-img1{ grid-area:i1; }
+.d5-img2{ grid-area:i2; }
+.d5-img3{ grid-area:i3; }
+.d5-img4{ grid-area:i4; }
+.d5-img5{ grid-area:i5; }
+.d5-img6{ grid-area:i6; }
+
+.d5-img1, .d5-img2, .d5-img3, .d5-img4, .d5-img5, .d5-img6{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:1.2rem;
+}
+
+/* Footer */
+.d5-footer{
+  grid-area:foot;
+  background:#bcd7f0; /* celeste claro */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  font-weight:700;
+}
+
+/* =========================
+   DISEÑO 6 (1200px)
+   ========================= */
+.d6{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+.d6-grid{
+  width:1200px;
+  max-width:100%;
+  margin:20px auto;
+  border:2px solid #111;
+  background:#fff;
+
+  display:grid;
+
+  /* 6 columnas para poder hacer 1/6 y 5/6 */
+  grid-template-columns:repeat(6, 1fr);
+
+  /* Filas exactas del esquema */
+  grid-template-rows:200px 250px 150px 300px 200px 300px;
+
+  grid-template-areas:
+    "top  top  top  top  top  top"
+    "y1   y1   y2   y2   y3   y3"
+    "rwide rwide rwide g    g    g"
+    "oran oran oran oran oran rright"
+    "mid  mid  mid  mid  mid  mid"
+    "rleft oran2 oran2 oran2 oran2 oran2";
+}
+
+/* Fila 1 */
+.d6-top{
+  grid-area:top;
+  background:#000;
+}
+
+/* Fila 2 */
+.d6-y1{ grid-area:y1; background:#f3b400; }
+.d6-blue{ grid-area:y2; background:#2f5597; }
+.d6-y2{ grid-area:y3; background:#f3b400; }
+
+/* Fila 3 */
+.d6-redWide{
+  grid-area:rwide;
+  background:#b30000;
+}
+.d6-green{
+  grid-area:g;
+  background:#b7d7a8;
+}
+
+/* Fila 4 */
+.d6-orangeBig{
+  grid-area:oran;
+  background:#ef7d2a;
+}
+.d6-redRight{
+  grid-area:rright;
+  background:#ff0000;
+}
+
+/* Fila 5 */
+.d6-mid{
+  grid-area:mid;
+  background:#000;
+}
+
+/* Fila 6 */
+.d6-redLeft{
+  grid-area:rleft;
+  background:#ff0000;
+}
+.d6-orangeBottom{
+  grid-area:oran2;
+  background:#ef7d2a;
+}
+
+
+/* =========================
+   DISEÑO 7 (900px)
+   ========================= */
+.d7{
+  margin:0;
+  background:#f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+.d7-grid{
+  width:900px;
+  max-width:100%;
+  margin:20px auto;
+  border:2px solid #111;
+  background:#fff;
+
+  display:grid;
+
+  /* 9 columnas para el patrón azul/rojo/gris */
+  grid-template-columns:repeat(9, 1fr);
+
+  /* Filas exactas del esquema */
+  grid-template-rows:200px 300px 400px 200px 150px 200px;
+
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 a6 a7 a8 a9"
+    "blk blk blk blk blk blk yel yel yel"
+    "red red red red blu blu blu blu blu"
+    "grn grn grn grn grn grn grn grn grn"
+    "yl1 yl1 yl1 bc  bc  bc  yr  yr  yr"
+    "b1 b2 b3 b4 b5 b6 b7 b8 b9";
+}
+
+/* Colores base */
+:root{
+  --azul:#4472c4;
+  --rojo:#ff0000;
+  --gris:#a6a6a6;
+  --negro:#000000;
+  --amarillo:#f3b400;
+  --verde:#a9cf8f;
+}
+
+/* ===== Fila 1 ===== */
+.d7-a1{grid-area:a1; background:var(--azul);}
+.d7-a2{grid-area:a2; background:var(--rojo);}
+.d7-a3{grid-area:a3; background:var(--gris);}
+.d7-a4{grid-area:a4; background:var(--azul);}
+.d7-a5{grid-area:a5; background:var(--rojo);}
+.d7-a6{grid-area:a6; background:var(--gris);}
+.d7-a7{grid-area:a7; background:var(--azul);}
+.d7-a8{grid-area:a8; background:var(--rojo);}
+.d7-a9{grid-area:a9; background:var(--gris);}
+
+/* ===== Fila 2 ===== */
+.d7-blackTop{
+  grid-area:blk;
+  background:var(--negro);
+}
+.d7-yellowTop{
+  grid-area:yel;
+  background:var(--amarillo);
+}
+
+/* ===== Fila 3 ===== */
+.d7-redMid{
+  grid-area:red;
+  background:var(--rojo);
+}
+.d7-blueMid{
+  grid-area:blu;
+  background:var(--azul);
+}
+
+/* ===== Fila 4 ===== */
+.d7-green{
+  grid-area:grn;
+  background:var(--verde);
+}
+
+/* ===== Fila 5 ===== */
+.d7-yellowLeft{
+  grid-area:yl1;
+  background:var(--amarillo);
+}
+.d7-blackCenter{
+  grid-area:bc;
+  background:var(--negro);
+}
+.d7-yellowRight{
+  grid-area:yr;
+  background:var(--amarillo);
+}
+
+/* ===== Fila 6 ===== */
+.d7-b1{grid-area:b1; background:var(--azul);}
+.d7-b2{grid-area:b2; background:var(--rojo);}
+.d7-b3{grid-area:b3; background:var(--gris);}
+.d7-b4{grid-area:b4; background:var(--azul);}
+.d7-b5{grid-area:b5; background:var(--rojo);}
+.d7-b6{grid-area:b6; background:var(--gris);}
+.d7-b7{grid-area:b7; background:var(--azul);}
+.d7-b8{grid-area:b8; background:var(--rojo);}
+.d7-b9{grid-area:b9; background:var(--gris);}
+
+/* =========================
+   TOPBAR (barra navegación)
+   ========================= */
+
+.topbar{
+  background:#7a1f2b;            /* corinto EFPEM */
+  padding:10px 14px;
+  border-bottom:2px solid rgba(0,0,0,0.25);
+}
+
+/* Para que no quede pegada a los bordes */
+.topbar-inner{
+  max-width:1440px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.topbar-brand{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  background:#5c1620;
+  padding:8px 12px;
+  border-radius:999px;
+  display:inline-block;
+}
+
+.topbar-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+/* Link estilo botón */
+.topbar-nav a{
+  color:#fff;
+  text-decoration:none;
+  background:#5c1620;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:0.92rem;
+  font-weight:700;
+  transition:background .2s, transform .2s;
+}
+
+.topbar-nav a:hover{
+  background:#3e0f15;
+  transform:translateY(-2px);
+}
+
+/* Activo */
+.topbar-nav a.activo{
+  outline:3px solid rgba(255,255,255,0.35);
+  outline-offset:-3px;
+}
+
+
+
+
+
+/* =========================
+   SCROLL PERSONALIZADO
+   ========================= */
+::-webkit-scrollbar{
+  width:12px;
+}
+
+::-webkit-scrollbar-track{
+  background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#7a1f2b;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#4e141d;
+}
