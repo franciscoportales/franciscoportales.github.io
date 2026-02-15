@@ -1,0 +1,153 @@
+ /* ============ RESET BÁSICO ============ */
+    *{ box-sizing: border-box; margin:0; padding:0; }
+    body{
+      font-family: Arial, sans-serif;
+      background:#ffffff;
+      padding: 20px;
+    }
+
+    /* Contenedor centrado y con máximo (como en las imágenes) */
+    .container{
+      max-width: 1440px;     /* para el diseño grande */
+      margin: 0 auto;
+      border: 2px solid #333;
+    }
+
+    /* ============ SECCIONES ============ */
+    header{
+      height: 400px;
+      background: #e77b2f; /* naranja */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+    }
+
+    nav{
+      height: 50px;
+      background: #cfe8c2; /* verde claro */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+    }
+
+    /* Bloque misión/visión/valores */
+    .mvv{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en grande */
+    }
+    .mvv > section{
+      height: 250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+      border-right: 2px solid rgba(0,0,0,0.15);
+    }
+    .mvv > section:last-child{ border-right: none; }
+
+    .mision{ background:#8ccf59; }   /* verde */
+    .vision{ background:#ffd863; }   /* amarillo */
+    .valores{ background:#b9cbea; }  /* azul */
+
+    main{
+      height: 800px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+      border-top: 2px solid rgba(0,0,0,0.15);
+      border-bottom: 2px solid rgba(0,0,0,0.15);
+    }
+
+    /* Galería de imágenes */
+    .galeria{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* 6 en una fila (grande) */
+    }
+    .img-box{
+      height: 240px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+      color: #fff;
+    }
+    /* alternado como la imagen (azul/naranja) */
+    .img1, .img3, .img5{ background:#0a2c63; } /* azul */
+    .img2, .img4, .img6{ background:#e77b2f; } /* naranja */
+
+    footer{
+      height: 60px;
+      background:#bcd6ea;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+      border-top: 2px solid rgba(0,0,0,0.15);
+    }
+
+
+    @media (max-width: 1024px){
+      .container{
+        max-width: 1024px;
+      }
+
+      .mvv{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "mision vision"
+          "valores valores";
+      }
+      .mision{ grid-area: mision; }
+      .vision{ grid-area: vision; }
+      .valores{ grid-area: valores; height: 160px; } 
+      .mvv > section{ border-right: none; border-bottom: 2px solid rgba(0,0,0,0.15); }
+      .mvv > section:nth-child(2){ border-left: 2px solid rgba(0,0,0,0.15); }
+      .mvv > section:last-child{ border-bottom: none; }
+
+      .galeria{
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .img-box{ color:#111; }
+      .img1, .img3, .img5{ background:#7fe08b; } /* verde */
+      .img2, .img4, .img6{ background:#ffffff; border:1px solid #ccc; } /* blanco */
+    }
+
+    @media (max-width: 768px){
+      .container{
+        max-width: 768px;
+      }
+
+      header{ height: 220px; } /* más compacto en móvil */
+      main{ height: 420px; }   /* más compacto */
+
+      .mvv{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "mision"
+          "vision"
+          "valores";
+      }
+      .mvv > section{
+        height: 120px;
+        border-left: none !important;
+        border-bottom: 2px solid rgba(0,0,0,0.15);
+      }
+      .valores{ height: 90px; }
+
+      .galeria{
+        grid-template-columns: 1fr 1fr; /* 2 columnas */
+      }
+      .img-box{
+        height: 140px;
+        background:#7fe08b;   /* verde */
+        color:#111;
+        border:1px solid #ccc;
+      }
+      /* alternado verde/blanco como tu ejemplo 768 */
+      .img2, .img4, .img6{ background:#ffffff; }
+    }
