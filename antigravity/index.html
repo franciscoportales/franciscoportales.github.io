@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución de Problemas - JavaScript</title>
+    <meta name="description" content="Portafolio de resolución de problemas lógicos usando JavaScript y diseño web moderno.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-indigo-400 text-2xl"></i>
+                <span class="text-xl font-bold font-['Outfit'] tracking-wide">Dev<span class="text-indigo-400">Solutions</span></span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-indigo-400 transition-colors duration-300 relative group">Inicio<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span></a></li>
+                    <li><a href="problema1.html" class="hover:text-indigo-400 transition-colors duration-300 relative group">Problema 1<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span></a></li>
+                    <li><a href="problema2.html" class="hover:text-indigo-400 transition-colors duration-300 relative group">Problema 2<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span></a></li>
+                    <li><a href="problema3.html" class="hover:text-indigo-400 transition-colors duration-300 relative group">Problema 3<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span></a></li>
+                    <li><a href="problema4.html" class="hover:text-indigo-400 transition-colors duration-300 relative group">Problema 4<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <div class="text-center max-w-3xl mb-16 animate-fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+                Explora Soluciones <span class="text-gradient">Lógicas</span>
+            </h1>
+            <p class="text-lg text-slate-300 mb-8 font-light">
+                Una colección interactiva de desafíos de programación resueltos mediante JavaScript, presentados a través de una interfaz moderna, limpia y elegante.
+            </p>
+        </div>
+
+        <!-- Problems Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            
+            <!-- Card Problema 1 -->
+            <div class="glass-card flex flex-col h-full animate-fade-in delay-100 opacity-0 relative overflow-hidden group">
+                <!-- Efecto de brillo de fondo al hover -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[1.5rem] blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                
+                <div class="relative flex flex-col h-full z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-sm font-semibold border border-indigo-500/30">
+                            Problema 01
+                        </div>
+                        <i class="fa-solid fa-magnifying-glass-chart text-slate-400 text-xl"></i>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold mb-3 text-white">Contador de Palabras</h2>
+                    
+                    <p class="text-slate-400 text-sm flex-grow mb-6">
+                        Análisis de texto avanzado. Ingresa un bloque de texto y descubre exactamente cuántas veces aparece una palabra específica, ignorando mayúsculas y acentos.
+                    </p>
+                    
+                    <a href="problema1.html" class="btn-gradient w-full py-3 px-4 rounded-xl text-center font-medium text-white flex items-center justify-center gap-2 group-hover:shadow-lg transition-all">
+                        <span>Ver Solución</span>
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Problema 2 -->
+            <div class="glass-card flex flex-col h-full animate-fade-in delay-200 opacity-0 relative overflow-hidden group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-[1.5rem] blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative flex flex-col h-full z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold border border-green-500/30">
+                            Problema 02
+                        </div>
+                        <i class="fa-solid fa-calculator text-slate-400 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3 text-white">Conversor Numérico</h2>
+                    <p class="text-slate-400 text-sm flex-grow mb-6">
+                        Herramienta matemática. Transforma rápidamente cualquier número decimal en sus equivalentes: Binario, Octal y Hexadecimal.
+                    </p>
+                    <a href="problema2.html" class="btn-gradient w-full py-3 px-4 rounded-xl text-center font-medium text-white flex items-center justify-center gap-2 group-hover:shadow-lg transition-all" style="background-image: linear-gradient(to right, #10b981, #059669);">
+                        <span>Ver Solución</span>
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Problema 3 -->
+            <div class="glass-card flex flex-col h-full animate-fade-in delay-300 opacity-0 relative overflow-hidden group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-orange-600 rounded-[1.5rem] blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative flex flex-col h-full z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-semibold border border-red-500/30">
+                            Problema 03
+                        </div>
+                        <i class="fa-solid fa-shield-halved text-slate-400 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3 text-white">Módulo de Autenticación</h2>
+                    <p class="text-slate-400 text-sm flex-grow mb-6">
+                        Sistema de inicio de sesión con validación de credenciales estáticas y bloqueo de seguridad automático tras múltiples intentos fallidos.
+                    </p>
+                    <a href="problema3.html" class="btn-gradient w-full py-3 px-4 rounded-xl text-center font-medium text-white flex items-center justify-center gap-2 group-hover:shadow-lg transition-all" style="background-image: linear-gradient(to right, #ef4444, #b91c1c);">
+                        <span>Ver Solución</span>
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Problema 4 -->
+            <div class="glass-card flex flex-col h-full animate-fade-in delay-300 opacity-0 relative overflow-hidden group" style="animation-delay: 400ms;">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-[1.5rem] blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative flex flex-col h-full z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-semibold border border-blue-500/30">
+                            Problema 04
+                        </div>
+                        <i class="fa-solid fa-users-viewfinder text-slate-400 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3 text-white">Filtro Dinámico de Usuarios</h2>
+                    <p class="text-slate-400 text-sm flex-grow mb-6">
+                        Buscador avanzado. Filtra una base de datos en tiempo real para encontrar candidatos mayores de edad con la habilidad precisa.
+                    </p>
+                    <a href="problema4.html" class="btn-gradient w-full py-3 px-4 rounded-xl text-center font-medium text-white flex items-center justify-center gap-2 group-hover:shadow-lg transition-all" style="background-image: linear-gradient(to right, #3b82f6, #1d4ed8);">
+                        <span>Ver Solución</span>
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass mt-auto py-6 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 DevSolutions. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

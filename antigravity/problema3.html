@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 03 - Autenticación</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-indigo-400 text-2xl"></i>
+                <span class="text-xl font-bold font-['Outfit'] tracking-wide">Dev<span class="text-indigo-400">Solutions</span></span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-house text-sm"></i> Inicio</a></li>
+                    <li><a href="problema1.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 1</a></li>
+                    <li><a href="problema2.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 2</a></li>
+                    <li><a href="problema3.html" class="text-white font-semibold transition-colors duration-300 flex items-center gap-2">Problema 3</a></li>
+                    <li><a href="problema4.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 w-full mx-auto">
+        
+        <div class="w-full max-w-md glass-card animate-fade-in relative z-10 px-8 py-10">
+            <a href="index.html" class="absolute -top-5 -left-5 bg-slate-800 border border-slate-600 rounded-full w-12 h-12 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 shadow-lg transition-all z-10">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- Logo o Ícono y Header -->
+            <div class="text-center mb-8">
+                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-red-500/20 border border-red-500/30 text-red-400 mb-4 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                    <i class="fa-solid fa-shield-halved text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold mb-2 font-['Outfit'] text-white">Módulo de Autenticación</h1>
+                <p class="text-slate-400 text-sm">Protección de acceso simulado. Se bloqueará a los 5 intentos.</p>
+            </div>
+
+            <!-- Hint (Solo para propósito educativo del test) -->
+            <div class="bg-blue-900/40 border border-blue-500/30 rounded-lg p-3 mb-6 text-center text-xs text-blue-200">
+                <i class="fa-solid fa-circle-info mr-1"></i> Credenciales válidas: <b>admin@test.com</b> / <b>12345</b>
+            </div>
+
+            <!-- Mensajes de estado top -->
+            <div id="statusAlert" class="hidden rounded-lg p-3 mb-6 text-center text-sm font-medium border animate-pop"></div>
+
+            <form id="loginForm" class="space-y-5">
+                <div class="space-y-1">
+                    <label for="inputEmail" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Correo Electrónico</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-envelope text-slate-500"></i>
+                        </div>
+                        <input type="email" id="inputEmail" required class="modern-input w-full rounded-xl py-3 pl-10 pr-4 text-sm placeholder-slate-600 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="usuario@correo.com">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label for="inputPassword" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">Contraseña</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-lock text-slate-500"></i>
+                        </div>
+                        <input type="password" id="inputPassword" required class="modern-input w-full rounded-xl py-3 pl-10 pr-4 text-sm placeholder-slate-600 disabled:opacity-50 disabled:cursor-not-allowed" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs mt-2 mb-4">
+                    <span class="text-slate-500">Intentos fallidos: <span id="contadorIntentos" class="font-bold text-slate-300">0</span>/5</span>
+                </div>
+
+                <button type="submit" id="btnSubmit" class="btn-gradient w-full py-3.5 rounded-xl font-semibold text-white shadow-lg flex justify-center items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed" style="background-image: linear-gradient(to right, #ef4444, #b91c1c);">
+                    <span>Iniciar Sesión</span>
+                    <i class="fa-solid fa-arrow-right-to-bracket group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </form>
+            
+        </div>
+        
+    </main>
+
+    <!-- Fondo extra para ambientar el problema 3 -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, #ef4444 0, transparent 40%);"></div>
+
+    <footer class="glass mt-auto py-6 text-center text-slate-400 text-sm relative z-10">
+        <p>&copy; 2026 DevSolutions. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script3.js"></script>
+</body>
+</html>

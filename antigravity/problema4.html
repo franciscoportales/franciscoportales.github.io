@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 04 - Filtro de Usuarios</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-indigo-400 text-2xl"></i>
+                <span class="text-xl font-bold font-['Outfit'] tracking-wide">Dev<span class="text-indigo-400">Solutions</span></span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-house text-sm"></i> Inicio</a></li>
+                    <li><a href="problema1.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 1</a></li>
+                    <li><a href="problema2.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 2</a></li>
+                    <li><a href="problema3.html" class="text-slate-300 hover:text-white transition-colors duration-300 flex items-center gap-2">Problema 3</a></li>
+                    <li><a href="problema4.html" class="text-white font-semibold transition-colors duration-300 flex items-center gap-2">Problema 4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
+        <div class="w-full glass-card animate-fade-in relative">
+            <a href="index.html" class="absolute -top-5 -left-5 bg-slate-800 border border-slate-600 rounded-full w-12 h-12 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 shadow-lg transition-all z-10">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- Header de la tarjeta -->
+            <div class="text-center mb-8 pt-4">
+                <div class="inline-block bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-500/30 mb-4">
+                    Problema 04
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 font-['Outfit']">Filtro Dinámico de Usuarios</h1>
+                <div class="bg-indigo-900/30 border-l-4 border-blue-500 p-4 rounded-r-lg max-w-4xl mx-auto text-left mb-6">
+                    <p class="text-slate-300 italic text-sm md:text-base">
+                        "Declarar un arreglo de 20 objetos (nombre, edad y habilidad). Implementar un formulario de búsqueda que filtre y muestre únicamente a los usuarios que posean la habilidad ingresada y que sean mayores de 18 años. Manejar la excepción si no hay coincidencias."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lista Completa de Usuarios (Tabla de Referencia) -->
+            <div class="mb-8 bg-slate-800/40 rounded-xl p-5 border border-slate-700/50 max-w-4xl mx-auto transition-all">
+                <div class="flex justify-between items-center cursor-pointer" id="toggleDirectorio">
+                    <h3 class="text-sm font-semibold text-slate-300"><i class="fa-solid fa-list mr-2"></i>Ver Directorio Completo (Todos los Usuarios)</h3>
+                    <i class="fa-solid fa-chevron-down text-slate-500 transition-transform duration-300" id="iconoToggle"></i>
+                </div>
+                <div id="contenedorDirectorio" class="hidden mt-4 overflow-x-auto overflow-y-auto max-h-60 custom-scrollbar rounded-lg border border-slate-700/50">
+                    <table class="w-full text-left text-sm text-slate-400">
+                        <thead class="text-xs uppercase bg-slate-900/80 text-slate-500 sticky top-0 z-10">
+                            <tr>
+                                <th scope="col" class="px-4 py-3 font-semibold">Nombre</th>
+                                <th scope="col" class="px-4 py-3 font-semibold">Edad</th>
+                                <th scope="col" class="px-4 py-3 font-semibold">Habilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaDirectorio" class="divide-y divide-slate-700/50 bg-slate-800/20">
+                            <!-- JS Inject -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Panel Superior de Búsqueda -->
+            <div class="max-w-xl mx-auto mb-10">
+                <form id="searchForm" class="flex items-center shadow-lg relative rounded-xl overflow-hidden group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400 group-focus-within:text-blue-500 transition-colors"></i>
+                    </div>
+                    <input type="text" id="inputBusqueda" class="modern-input w-full py-4 pl-12 pr-32 text-sm lg:text-base" placeholder="Busca una habilidad (ej. JavaScript, React, Python)...">
+                    <button type="submit" class="absolute right-0 top-0 bottom-0 px-6 font-semibold text-white transition-all duration-300 hover:bg-blue-600 flex items-center bg-blue-500" style="background-image: linear-gradient(to right, #3b82f6, #2563eb);">
+                        <span class="hidden sm:inline">Buscar</span>
+                        <i class="fa-solid fa-arrow-right sm:hidden"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Panel de Resultados (Grid de Usuarios) -->
+            <div class="bg-gray-900/50 rounded-2xl border border-gray-700/50 p-6 min-h-[350px] relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 opacity-50"></div>
+                
+                <!-- Encabezado de la tabla de resultados -->
+                <div class="flex justify-between items-end mb-6 pb-2 border-b border-gray-700/50">
+                    <h3 class="text-lg font-semibold text-white font-['Outfit']">Resultados del Filtro</h3>
+                    <span id="contadorResultados" class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700">Esperando...</span>
+                </div>
+
+                <!-- Contenedor dinámico (Grid) -->
+                <div id="gridResultados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Estado Inicial / Vacío por defecto -->
+                </div>
+
+                <!-- Empty State (No encontrado / Inicial) -->
+                <div id="estadoMensaje" class="flex flex-col items-center justify-center p-8 text-center min-h-[200px]">
+                    <i id="estadoIcono" class="fa-solid fa-users text-5xl opacity-30 mb-4 text-slate-500"></i>
+                    <p id="estadoTexto" class="text-slate-400 text-lg">Introduce una habilidad para ver a los candidatos.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass mt-auto py-6 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 DevSolutions. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script4.js"></script>
+</body>
+</html>
