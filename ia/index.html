@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA para Desarrollo Web | EFPEM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="logo d-grid place-items-center text-center fw-bold text-danger">USAC</div>
+      <span>IA Web EFPEM</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/ia.html">IA Generativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/agentes.html">Agentes IA</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/qa.html">IA para QA</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="badge badge-corinto mb-3 p-2">Diseño Web · Actividad IA</span>
+    <h1>IA para el desarrollo de aplicaciones web</h1>
+    <p class="mt-3">Sitio profesional creado con HTML5, CSS3, JavaScript ES6 y Bootstrap 5. Explica cómo la inteligencia artificial ayuda a crear, probar y mejorar aplicaciones web modernas.</p>
+    <div class="mt-4 d-flex gap-2 flex-wrap">
+      <a href="pages/ia.html" class="btn btn-corinto"><i class="fa-solid fa-brain me-2"></i>Explorar contenido</a>
+      <a href="#estructura" class="btn btn-light rounded-pill fw-bold">Ver estructura</a>
+    </div>
+  </div>
+</header>
+
+<main class="container py-5">
+  <section class="row g-4 align-items-center mb-5">
+    <div class="col-lg-7">
+      <h2 class="section-title">Presentación del proyecto</h2>
+      <p>Este proyecto muestra el uso de herramientas de IA en el desarrollo web, desde modelos generativos hasta agentes capaces de asistir en programación, terminal, pruebas y automatización.</p>
+      <p>La propuesta mantiene una estructura sencilla, ordenada y responsive para cumplir con los requisitos del curso de Diseño Web.</p>
+    </div>
+    <div class="col-lg-5">
+      <div class="card-pro p-4">
+        <h5 class="fw-bold"><i class="fa-solid fa-user-graduate me-2 text-danger"></i>Datos del estudiante</h5>
+        <p class="mb-1"><strong>Nombre:</strong> José Francisco Portales Solval</p>
+        <p class="mb-1"><strong>Curso:</strong> Diseño Web</p>
+        <p class="mb-0"><strong>Institución:</strong> USAC · EFPEM</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="estructura" class="mb-5">
+    <h2 class="section-title text-center mb-4">Estructura del sitio</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="card-pro h-100 p-4"><div class="icon-box"><i class="fa-solid fa-robot"></i></div><h4>IA Generativa</h4><p>Comparativa de modelos LLM como GPT, Claude y Gemini, con usos, fortalezas y limitaciones.</p><a class="btn btn-outline-corinto" href="pages/ia.html">Abrir página</a></div></div>
+      <div class="col-md-4"><div class="card-pro h-100 p-4"><div class="icon-box"><i class="fa-solid fa-code"></i></div><h4>Agentes de IA</h4><p>Flujos de trabajo con Cursor, Windsurf, GitHub Copilot, Antigravity, Claude Code, Aider y herramientas low-code.</p><a class="btn btn-outline-corinto" href="pages/agentes.html">Abrir página</a></div></div>
+      <div class="col-md-4"><div class="card-pro h-100 p-4"><div class="icon-box"><i class="fa-solid fa-vial-circle-check"></i></div><h4>IA para QA</h4><p>Self-healing tests, visual testing, QA tradicional vs IA-driven QA y generación de datos sintéticos.</p><a class="btn btn-outline-corinto" href="pages/qa.html">Abrir página</a></div></div>
+    </div>
+  </section>
+
+  <section class="card-pro p-4 mb-5">
+    <h2 class="section-title">Probador de prompts</h2>
+    <p>Mini componente en JavaScript para evaluar si un prompt tiene contexto, objetivo, formato y restricciones.</p>
+    <div class="row g-3">
+      <div class="col-lg-9"><input id="promptInput" class="form-control" placeholder="Ejemplo: Actúa como diseñador web y genera una página Bootstrap responsive en formato HTML..."></div>
+      <div class="col-lg-3 d-grid"><button class="btn btn-corinto" onclick="evaluarPrompt()">Evaluar prompt</button></div>
+    </div>
+    <div id="promptResultado"></div>
+  </section>
+</main>
+
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1">Proyecto académico · Diseño Web · USAC EFPEM</p>
+    <small>© <span id="year"></span> José Francisco Portales Solval</small>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
